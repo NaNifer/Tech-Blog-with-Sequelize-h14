@@ -1,1 +1,41 @@
 {{!-- The main layout is the HTML page wrapper which can be reused for the different views of the app. {{{body}}} is used as a placeholder for where the main content should be rendered. --}}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsterat&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="flex-column min-100-vh">
+    <nav class="navbar">
+     <header class="logo">
+        <h1 class="app-title"><a href="/">Tech Blog</a><span><i class="fa fa-light fa-laptop"></i></span></h1>
+    </header>
+        <ul class="navbar-nav">
+            <li class="li-inline nav-item"><a href="/">Home</a></li>
+            <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+            {{#if logged_in}}
+            <li class="li-inline nav-item"><a id="logoutlink" href="/">Logout</a></li>
+            {{else}}
+            <li class="li-inline nav-item"><a href="/login">Login</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    <main class="col-auto">
+        {{{body}}}
+    </main>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+</html>
