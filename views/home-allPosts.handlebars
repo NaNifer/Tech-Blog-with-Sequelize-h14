@@ -1,4 +1,8 @@
-{{#if posts.length}}
+{{!-- The content for the app's home view which will be rendered into the layout's {{{body}}}.
+
+ --}}
+ 
+ {{#if posts.length}}
 <div class="card flex-column">
     {{#each posts as |post|}}
     {{>singleItem post}}
