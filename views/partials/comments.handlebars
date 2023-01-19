@@ -1,0 +1,9 @@
+<div class = 'comments'>
+{{#each this}}
+<div>
+    <p class= 'card-body'>
+        {{commentData}} posted by {{user.username}} on {{ format_date dateCreated }}
+    </p>
+</div>
+{{/each}}
+</div>
